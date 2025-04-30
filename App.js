@@ -1,12 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StyleSheet, Text, View } from 'react-native';
+import CharactersScreen from './src/screens/CharactersScreen';
+import CharactersDetailsScreen from './src/screens/CharactersDetailsScreen';
+import StarshipsScreen from './src/screens/StarshipsScreen';
+import FilmsSreen from './src/screens/FilmsSreen';
+import CreditsScreen from './src/screens/CreditsScreen';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='Lista de personagens'>
+        <Stack.Screen name='Lista de personagens' component={CharactersScreen}/>
+        <Stack.Screen name='Personagem' component={CharactersDetailsScreen}/>
+        <Stack.Screen name='Naves do personagem' component={StarshipsScreen}/>
+        <Stack.Screen name='Filmes com o personagem' component={FilmsSreen}/>
+        <Stack.Screen name='Credito dos desenvolvedores' component={CreditsScreen}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
