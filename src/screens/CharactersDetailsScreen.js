@@ -1,11 +1,11 @@
-import { View, Text } from 'react-native'
+import { View, Text} from 'react-native'
 import React from 'react'
 
-export default function CharactersDetailsScreen({route}) {
+export default function CharactersDetailsScreen({route,onPress}) {
     const {character} = route.params;
   return (
     <View>
-      <Text>{character.name}</Text>
+          <Text>CharactersDetailsScreen</Text>
     </View>
   )
 }

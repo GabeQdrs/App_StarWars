@@ -31,6 +31,7 @@ export default function CharactersScreen({ navigation }) {
     }
 
   return (
+    
     <FlatList 
         data={characters}
         keyExtractor={(item) => item.name}
