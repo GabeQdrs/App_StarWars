@@ -30,6 +30,18 @@ export default function CharactersScreen({ navigation }) {
         return <ActivityIndicator size={"large"}/>
     }
 
+
+    
+    useEffect(() => {
+        fetchStarWars();
+        navigation.setOptions({
+          headerRight: () => (
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Credito dos desenvolvedores")}>
+              <Image source={require("../../assets/about-icon.png")} style={styles.icon}/>
+            </TouchableOpacity>
+          ),});
+      }, []);
+      
   return (
     
     <FlatList 

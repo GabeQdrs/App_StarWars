@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { FlatList, ActivityIndicator } from 'react-native';
 import axios from 'axios';
 import { useRoute } from '@react-navigation/native';
-import FilmCard from '../components/FilmCard'; // Remova as chaves aqui
+import FilmCard from '../components/FilmCard'; 
 
 export default function FilmsScreen() {
   const [films, setFilms] = useState([]);
