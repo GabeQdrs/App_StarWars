@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import CharactersScreen from './src/screens/CharactersScreen';
 import CharactersDetailsScreen from './src/screens/CharactersDetailsScreen';
 import StarshipsScreen from './src/screens/StarshipsScreen';
-import FilmsSreen from './src/screens/FilmsSreen';
+import FilmsScreen from './src/screens/FilmsScreen';
 import CreditsScreen from './src/screens/CreditsScreen';
 
 const Stack = createNativeStackNavigator();
@@ -16,7 +16,7 @@ export default function App() {
         <Stack.Screen name='Lista de personagens' component={CharactersScreen}/>
         <Stack.Screen name='Personagem' component={CharactersDetailsScreen}/>
         <Stack.Screen name='Naves do personagem' component={StarshipsScreen}/>
-        <Stack.Screen name='Filmes com o personagem' component={FilmsSreen}/>
+        <Stack.Screen name='Filmes' component={FilmsScreen}/>
         <Stack.Screen name='Credito dos desenvolvedores' component={CreditsScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
