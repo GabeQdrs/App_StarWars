@@ -60,3 +60,22 @@ export default function CharactersScreen({ navigation }) {
     />
   )
 }
+
+const styles = StyleSheet.create({
+  
+    button: {
+      width: 50,
+      height: 50,
+      justifyContent: "center",
+      alignItems: "center",
+      padding: 20,
+      marginRight: 8,
+      marginTop: 4,
+  
+    },
+    icon: {
+      width: 30,
+      height: 30,
+      resizeMode: "contain"
+    },
+  });
