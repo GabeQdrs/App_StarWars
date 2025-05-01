@@ -1,5 +1,5 @@
 import { View, Text, FlatList, ActivityIndicator } from 'react-native'
-import React, { useEffect, useState } from 'react'
+import React, {useEffect, useState  } from 'react'
 import CharacterCard from '../components/CharacterCard'
 import axios from "axios";
 import CharactersDetailsScreen from './CharactersDetailsScreen';
@@ -31,17 +31,6 @@ export default function CharactersScreen({ navigation }) {
     }
 
 
-    
-    useEffect(() => {
-        fetchStarWars();
-        navigation.setOptions({
-          headerRight: () => (
-            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Credito dos desenvolvedores")}>
-              <Image source={require("../../assets/about-icon.png")} style={styles.icon}/>
-            </TouchableOpacity>
-          ),});
-      }, []);
-      
   return (
     
     <FlatList 
@@ -61,21 +50,3 @@ export default function CharactersScreen({ navigation }) {
   )
 }
 
-const styles = StyleSheet.create({
-  
-    button: {
-      width: 50,
-      height: 50,
-      justifyContent: "center",
-      alignItems: "center",
-      padding: 20,
-      marginRight: 8,
-      marginTop: 4,
-  
-    },
-    icon: {
-      width: 30,
-      height: 30,
-      resizeMode: "contain"
-    },
-  });
