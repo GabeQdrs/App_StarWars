@@ -2,12 +2,12 @@
 import { View, Text, StyleSheet } from 'react-native';
 import React from 'react';
 
-export default function ShipCard({ ship }) {
+export default function ShipCard({ starships }) {
   return (
     <View style={styles.card}>
-      <Text style={styles.title}>{ship.name}</Text>
-      <Text>Modelo: {ship.model}</Text>
-      <Text>Passageiros: {ship.passengers}</Text>
+      <Text style={styles.title}>{starships.name}</Text>
+      <Text>Modelo: {starships.model}</Text>
+      <Text>Passageiros: {starships.passengers}</Text>
     </View>
   );
 }

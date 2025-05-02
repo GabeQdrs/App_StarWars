@@ -6,15 +6,15 @@ import { useRoute } from '@react-navigation/native';
 import ShipCard from '../components/ShipCard'; 
 
 export default function StarshipsScreen({ route }) {
-  const [ships, setShips] = useState([]);
+  const [starships, setShips] = useState([]);
   const [loading, setLoading] = useState(false);
   const { character } = route.params;
 
   async function fetchShips() {
-    if (!character.ships || character.ships.length === 0) return;
+    if (!character.starships || character.starships.length === 0) return;
     try {
       setLoading(true);
-      const responses = await Promise.all(character.ships.map(url => axios.get(url)));
+      const responses = await Promise.all(character.starships.map(url => axios.get(url)));
       setShips(responses.map(res => res.data));
     } catch (error) {
       console.error("Erro ao buscar naves:", error);
@@ -35,7 +35,7 @@ export default function StarshipsScreen({ route }) {
     );
   }
 
-  if (!character.ships || character.ships.length === 0) {
+  if (!character.starships || character.starships.length === 0) {
     return (
       <View style={styles.center}>
         <Text>Este personagem não possui naves!</Text>
@@ -45,8 +45,8 @@ export default function StarshipsScreen({ route }) {
 
   return (
     <FlatList
-      data={ships}
-      renderItem={({ item }) => <ShipCard ship={item} />}
+      data={starships}
+      renderItem={({ item }) => <ShipCard starships={item} />}
       keyExtractor={(item) => item.url}
     />
   );
