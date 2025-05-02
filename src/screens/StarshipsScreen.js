@@ -11,7 +11,7 @@ export default function StarshipsScreen({ route }) {
   const { character } = route.params;
 
   async function fetchShips() {
-    if (!character.ships || character.ships.lenght === 0) return;
+    if (!character.ships || character.ships.length === 0) return;
     try {
       setLoading(true);
       const responses = await Promise.all(character.ships.map(url => axios.get(url)));
@@ -27,16 +27,21 @@ export default function StarshipsScreen({ route }) {
   fetchShips();
   }, []);
 
-  if (loading) return <ActivityIndicator size="large" color="#000" />;
-
-  if (!character.ships || character.ships.lenght === 0) {
+  if (loading) {
     return (
-      <View style={StyleSheet.center}>
-        <Text>Este personagem não possui naves!</Text>
+      <View style={styles.center}>
+        <ActivityIndicator size="large" color="#000" />
       </View>
     );
   }
 
+  if (!character.ships || character.ships.length === 0) {
+    return (
+      <View style={styles.center}>
+        <Text>Este personagem não possui naves!</Text>
+      </View>
+    );
+  }
 
   return (
     <FlatList
