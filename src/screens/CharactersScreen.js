@@ -1,4 +1,4 @@
-import { View, Text, FlatList, ActivityIndicator } from 'react-native'
+import { View, Text, FlatList, ActivityIndicator, StyleSheet } from 'react-native'
 import React, {useEffect, useState  } from 'react'
 import CharacterCard from '../components/CharacterCard'
 import axios from "axios";
@@ -32,21 +32,30 @@ export default function CharactersScreen({ navigation }) {
 
 
   return (
-    
-    <FlatList 
-        data={characters}
-        keyExtractor={(item) => item.name}
-        renderItem={({item}) => (
-            <CharacterCard 
-                character={item}
-                onPress={ () => 
-                    navigation.navigate("Personagem", {
-                        character: { ...item, id: item}
-                    })
-                }
-            />
-        )}
-    />
+    <View style={styles.container}>
+        <FlatList 
+            data={characters}
+            numColumns={2}
+            showsVerticalScrollIndicator={false}
+            keyExtractor={(item) => item.name}
+            renderItem={({item}) => (
+                <CharacterCard 
+                    character={item}
+                    onPress={ () => 
+                        navigation.navigate("Detalhes do personagem", {
+                            character: { ...item, id: item}
+                        })
+                    }
+
+                />
+            )}
+        />
+    </View>
   )
 }
 
+const styles = StyleSheet.create({
+    container: {
+        padding: 10
+    },
+})

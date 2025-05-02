@@ -7,6 +7,7 @@ export default function CharactersDetailsScreen({ route }) {
   const { character } = route.params;
   const navigation = useNavigation();
 
+
   return (
     <View style={styles.container}>
       <DetailCard character={character} />

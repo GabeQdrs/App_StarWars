@@ -28,7 +28,7 @@ export default function AboutScreen() {
 
 return (
     <ScrollView contentContainerStyle={styles.cardContainer}>
-        <Text style={styles.title}>Desenvolvedores</Text>
+        {/* <Text style={styles.title}>Desenvolvedores</Text> */}
         <CardDevs />
     </ScrollView>
 );
@@ -38,8 +38,7 @@ const styles = StyleSheet.create({
 cardContainer: {
     backgroundColor: "#f4f4f4",
     paddingHorizontal: 10,
-    paddingTop: 20,
-    margin: 8,
+    margin: 10,
 },
 title: {
     fontSize: 22,

@@ -13,14 +13,16 @@ export default function CharacterCard({character, onPress}) {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'yellow',
-        margin: 8,
-        alignItems: 'center',
-        paddingVertical: 10,
-        borderRadius: 10,
-        borderWidth: 1,
+      flex: 1,
+      backgroundColor: 'yellow',
+      margin: 8,
+      alignItems: 'center',
+      paddingVertical: 10,
+      borderRadius: 10,
+      elevation: 2,
     },
     text: {
-        fontSize: 18,
+      fontSize: 18,
+      fontWeight: '400',
     }
 })

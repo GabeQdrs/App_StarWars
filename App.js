@@ -1,6 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import CharactersScreen from './src/screens/CharactersScreen';
 import CharactersDetailsScreen from './src/screens/CharactersDetailsScreen';
 import StarshipsScreen from './src/screens/StarshipsScreen';
@@ -13,8 +13,16 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Lista de personagens'>
-        <Stack.Screen name='Lista de personagens' component={CharactersScreen}/>
-        <Stack.Screen name='Personagem' component={CharactersDetailsScreen}/>
+        <Stack.Screen name='Lista de personagens' component={CharactersScreen}
+          options={({ navigation }) => ({
+            headerRight: () => (
+              <TouchableOpacity onPress={() => navigation.navigate('Credito dos desenvolvedores')}>
+                <Text style={styles.button}>Sobre!</Text>
+              </TouchableOpacity>
+            ),
+          })}
+        />
+        <Stack.Screen name='Detalhes do personagem' component={CharactersDetailsScreen}/>
         <Stack.Screen name='Naves do personagem' component={StarshipsScreen}/>
         <Stack.Screen name='Filmes' component={FilmsScreen}/>
         <Stack.Screen name='Credito dos desenvolvedores' component={CreditsScreen}/>
@@ -30,4 +38,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  button: {
+    color: 'blue',
+    marginRight: 16,
+    fontSize:18,
+    padding: 8,
+    borderRadius: 10,
+  }
 });
