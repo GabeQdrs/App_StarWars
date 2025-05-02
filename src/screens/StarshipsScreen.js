@@ -33,7 +33,7 @@ export default function StarshipsScreen({ route }) {
     <FlatList
       data={ships}
       renderItem={({ item }) => <ShipCard ship={item} />}
-      keyExtractor={(item) => item.episode_id.toString()}
+      keyExtractor={(item) => item.url}
     />
   );
 }

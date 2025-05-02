@@ -5,9 +5,9 @@ import React from 'react';
 export default function ShipCard({ ship }) {
   return (
     <View style={styles.card}>
-      <Text style={styles.title}>{ship.title}</Text>
+      <Text style={styles.title}>{ship.name}</Text>
       <Text>Modelo: {ship.model}</Text>
-      <Text>Passageiros: {ship.passenger}</Text>
+      <Text>Passageiros: {ship.passengers}</Text>
     </View>
   );
 }
