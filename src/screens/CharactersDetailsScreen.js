@@ -22,7 +22,7 @@ export default function CharactersDetailsScreen({ route }) {
 
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate('Filmes', { character })}
+          onPress={() => navigation.navigate('Credito dos desenvolvedores', { character })}
         >
           <Text style={styles.buttonText}>Ver Filmes</Text>
         </TouchableOpacity>
